@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguros SegurPlus</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+  <!-- NAVBAR -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700">SegurPlus</h1>
+      <nav class="space-x-6">
+        <a href="#inicio" class="text-gray-700 hover:text-blue-600">Inicio</a>
+        <a href="#sobre-mi" class="text-gray-700 hover:text-blue-600">Sobre mí</a>
+        <a href="#servicios" class="text-gray-700 hover:text-blue-600">Servicios</a>
+        <a href="#contacto" class="text-gray-700 hover:text-blue-600">Contacto</a>
+        <a href="#login" class="text-gray-700 hover:text-blue-600">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INICIO -->
+  <section id="inicio" class="py-20 bg-blue-100 text-center">
+    <h2 class="text-4xl font-bold text-blue-800">Tu tranquilidad es nuestra prioridad</h2>
+    <p class="mt-4 text-lg text-blue-700">Soluciones en seguros para cada etapa de tu vida.</p>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="py-20 max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-blue-800 mb-4">Sobre mí</h2>
+    <p class="text-gray-700">Soy un asesor con más de 10 años de experiencia en el sector de seguros, comprometido con ofrecer el mejor servicio personalizado para ti y tu familia.</p>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-20 bg-gray-100 max-w-5xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-blue-800 mb-6">Servicios</h2>
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <li class="bg-white p-6 shadow rounded-xl">
+        <h3 class="font-semibold text-blue-700">Seguro de Vida</h3>
+        <p class="text-gray-600 mt-2">Protección financiera para tus seres queridos.</p>
+      </li>
+      <li class="bg-white p-6 shadow rounded-xl">
+        <h3 class="font-semibold text-blue-700">Seguro de Auto</h3>
+        <p class="text-gray-600 mt-2">Cobertura confiable para tu vehículo.</p>
+      </li>
+      <li class="bg-white p-6 shadow rounded-xl">
+        <h3 class="font-semibold text-blue-700">Seguro Médico</h3>
+        <p class="text-gray-600 mt-2">Cuida tu salud con los mejores planes.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 max-w-xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-blue-800 mb-4">Contacto</h2>
+    <form action="https://formsubmit.co/TU_CORREO@ejemplo.com" method="POST" class="space-y-4">
+      <input type="text" name="nombre" placeholder="Nombre" required class="w-full p-3 border rounded">
+      <input type="email" name="email" placeholder="Correo" required class="w-full p-3 border rounded">
+      <textarea name="mensaje" rows="4" placeholder="Mensaje" required class="w-full p-3 border rounded"></textarea>
+      <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800">Enviar</button>
+    </form>
+  </section>
+
+  <!-- LOGIN -->
+  <section id="login" class="py-20 max-w-sm mx-auto px-4">
+    <h2 class="text-3xl font-bold text-blue-800 mb-4">Login Administrador</h2>
+    <form onsubmit="return login(event)" class="space-y-4">
+      <input type="text" id="usuario" placeholder="Usuario" class="w-full p-3 border rounded">
+      <input type="password" id="clave" placeholder="Contraseña" class="w-full p-3 border rounded">
+      <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-800">Ingresar</button>
+    </form>
+    <p id="mensaje-error" class="text-red-600 mt-2 hidden">Credenciales incorrectas</p>
+  </section>
+
+  <script>
+    function login(e) {
+      e.preventDefault();
+      const usuario = document.getElementById('usuario').value;
+      const clave = document.getElementById('clave').value;
+      if (usuario === 'admin' && clave === '1234') {
+        alert('Bienvenido Administrador');
+      } else {
+        document.getElementById('mensaje-error').classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
